@@ -1,3 +1,5 @@
+console.log("🚀 App.js has loaded");
+
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -6,9 +8,10 @@ const { MONGOURI, JWT_SECRET } = require('./config/keys')
 const path = require('path');
 const cors = require('cors');
 app.use(cors({
-    origin: 'http://localhost:3000', 
+    origin: process.env.CLIENT_URL || 'http://localhost:3000',
     credentials: true
 }));
+
 
 
 mongoose.connect(MONGOURI);
