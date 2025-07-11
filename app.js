@@ -9,9 +9,9 @@ const path = require('path');
 const cors = require("cors");
 
 app.use(cors({
-    origin: process.env.CLIENT_URL || 'https://instaclone202.netlify.app',
-    credentials: true
+    origin: '*'
 }));
+
 
 
 
